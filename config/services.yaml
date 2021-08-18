@@ -18,8 +18,23 @@ services:
         exclude:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
+            - '../src/DTO/'
             - '../src/Kernel.php'
             - '../src/Tests/'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+    App\Repository\TwitterRepository:
+        arguments:
+            $twitterOAuth: '@twitterOAuth'
+
+
+    twitterOAuth:
+        class: Abraham\TwitterOAuth\TwitterOAuth
+        arguments:
+            $consumerKey: '%env(string:consumerKey)%'
+            $consumerSecret: '%env(string:consumerSecret)%'
+            $oauthToken: '%env(string:oauthToken)%'
+            $oauthTokenSecret: '%env(string:oauthTokenSecret)%'
