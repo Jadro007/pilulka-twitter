@@ -29,3 +29,9 @@ You can append ?format=json to get JSON response instead of nice user page.
 
 Tests are in "tests" folder. Currently, there is only one demo test, it would be better to write more tests :)
 
+# Twitter communication
+
+For communication with Twitter, there is used "abraham/twitteroauth" package.
+
+# Application structure
+Source code is in "src" folder divided into folders based on application logic structure. 
